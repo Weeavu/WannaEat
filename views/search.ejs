@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WannaEat</title>
+  </head>
+  <body onload="setOptions(<%= JSON.stringify(data) %>)">
+    <center>
+      <h1>Whatchu Tryna Eat?</h1>
+
+      <form action="/search" method="get">
+        <input type="submit" value="Search">
+        <input type="text" name="search" value="<%= search %>" placeholder="Type Search"/>
+        <input type="text" name="location" value="<%= location %>">
+      </form>
+
+      <div id="output"></div>
+
+      <div>
+        <canvas id="canvas" width="500" height="500"></canvas>
+      </div>
+
+      <input type="button" value="spin" id='spin'/>
+    </center>
+    <script type="text/javascript" src="js/spin.js"></script>
+  </body>
+</html>

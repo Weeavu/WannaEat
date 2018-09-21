@@ -1,0 +1,26 @@
+{
+  "name": "wannaeat",
+  "version": "1.0.0",
+  "description": "An web app that will help people decide what to eat",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Weeavu/WannaEat.git"
+  },
+  "author": "Vuvu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Weeavu/WannaEat/issues"
+  },
+  "homepage": "https://github.com/Weeavu/WannaEat#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "request": "^2.88.0",
+    "yelp-fusion": "^2.2.1"
+  }
+}
