@@ -24,7 +24,10 @@ app.get("/search", function(req, res){
     data = {data:results, search:req.query.search, location:req.query.location};
     console.log(results);
     res.render("search", data);
-  });
+  }).catch(function(e){
+    console.log(e);
+    res.redirect("/")
+  });;
 });
 
 app.listen(3000, function(){
