@@ -70,12 +70,13 @@ function drawRouletteWheel() {
     for(var i = 0; i < options.length; i++) {
       var angle = startAngle + i * arc;
       //ctx.fillStyle = colors[i];
-      ctx.fillStyle = getColor(i, options.length);
+      // ctx.fillStyle = getColor(i, options.length);
+      ctx.fillStyle = "rgb(252,237,176,1)";
 
       ctx.beginPath();
       ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
       ctx.arc(250, 250, insideRadius, angle + arc, angle, true);
-      ctx.stroke();
+      // ctx.stroke();
       ctx.fill();
 
       ctx.save();
@@ -83,7 +84,8 @@ function drawRouletteWheel() {
       ctx.shadowOffsetY = -1;
       ctx.shadowBlur    = 0;
       ctx.shadowColor   = "rgb(220,220,220)";
-      ctx.fillStyle = "black";
+      ctx.fillStyle = "rgb(40,107,130,1)";
+      ctx.font = "15px Avenir"
       ctx.translate(250 + Math.cos(angle + arc / 2) * textRadius,
                     250 + Math.sin(angle + arc / 2) * textRadius);
       ctx.rotate(angle + arc / 2 + Math.PI *2);
