@@ -2,9 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/search.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>WannaEat - <%= search %></title>
   </head>
   <body onload="setOptions(<%= JSON.stringify(data) %>)">
@@ -14,13 +15,22 @@
       <div class="formContainer">
         <form action="/search" method="get" class="form-inline">
           <input class="form-control mb-2 mr-sm-2 mb-sm-0" type="text" name="search" value="<%= search %>" placeholder="Enter Search..."/>
-          <input class="form-control mb-2 mr-sm-2 mb-sm-0" type="text" name="location" value="<%= location %>" placeholder="Enter Location...">
+
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <input id="location" class="form-control" type="text" name="location" value="<%= location %>" placeholder="Enter Location...">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" onclick="setLocation()">
+                <i class="fas fa-map-marker-alt"></i>
+              </button>
+            </div>
+          </div>
+
           <input class="btn btn-primary" type="submit" value="Search">
         </form>
       </div>
 
 
-      Let's go to <a target="_blank" rel="noopener noreferrer" id="output" href="">Hi</a>
+      Let's go to <a target="_blank" rel="noopener noreferrer" id="output">...</a>
 
       <div class="spinner">
         <canvas id="canvas" width="500" height="500"></canvas>
@@ -28,6 +38,8 @@
 
       <input class="btn btn-primary btn-md" type="button" value="Spin" id='spin'/>
     </center>
+
+    <script src="js/features.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/spin.js"></script>
   </body>
 </html>

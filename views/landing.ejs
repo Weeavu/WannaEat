@@ -5,10 +5,20 @@
       <div class="formContainer">
         <form action="/search" method="get" class="form-inline">
           <input class="form-control mb-2 mr-sm-2 mb-sm-0" type="text" name="search" placeholder="Enter Search..."/>
-          <input class="form-control mb-2 mr-sm-2 mb-sm-0" type="text" name="location" value="Murrysville" placeholder="Enter Location...">
+
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <input id="location" class="form-control" type="text" name="location" value="Murrysville" placeholder="Enter Location...">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" onclick="setLocation()">
+                <i class="fas fa-map-marker-alt"></i>
+              </button>
+            </div>
+          </div>
+
           <input class="btn btn-primary" type="submit" value="Search">
         </form>
       </div>
     </div>
 
+    <script src="js/features.js" charset="utf-8"></script>
 <% include partials/footer %>
