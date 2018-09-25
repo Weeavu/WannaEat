@@ -108,6 +108,7 @@ function drawRouletteWheel() {
 }
 
 function spin() {
+  choosen.innerHTML = "<span>.</span><span>.</span><span>.</span>"
   spinAngleStart = Math.random() * 10 + 10;
   spinTime = 0;
   spinTimeTotal = Math.random() * 3 + 4 * 1000;
@@ -145,8 +146,9 @@ function easeOut(t, b, c, d) {
   return b+c*(tc + -3*ts + 3*t);
 }
 
+var choosen = document.getElementById("output");
+
 function setData(index){
-  var choosen = document.getElementById("output");
   choosen.innerHTML = options[index];
   choosen.setAttribute("href", bussinessArray[index].url);
 }

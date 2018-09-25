@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/search.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel=icon href=/favicon/favicon-32x32.png>
     <title>WannaEat - <%= search %></title>
   </head>
   <body onload="setOptions(<%= JSON.stringify(data) %>)">
@@ -25,12 +26,12 @@
             </div>
           </div>
 
-          <input class="btn btn-primary" type="submit" value="Search">
+          <input id="searchBtn" class="btn btn-primary" type="submit" value="Search">
         </form>
       </div>
 
 
-      Let's go to <a target="_blank" rel="noopener noreferrer" id="output" class="saving"><span>.</span><span>.</span><span>.</span></a>
+      Let's go to <a target="_blank" rel="noopener noreferrer" id="output" class="saving">...</a>
 
       <div class="spinner">
         <canvas id="canvas" width="500" height="500"></canvas>
