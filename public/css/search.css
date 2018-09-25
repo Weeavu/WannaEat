@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(255,151,176);
+  background: radial-gradient(circle, rgba(255,151,176,1) 0%, rgba(233,148,218,1) 100%);
+}
+
+#output {
+  font-size: 20px;
+  margin: 30pt 0pt 30pt 0pt;
+}
+
+.formContainer {
+  margin: auto;
+  width: 50%;
+  border: 1px solid purple;
+  padding: 10px;
+}
+
+#canvas {
+  border: 1px solid purple;
+}
+
+.landing {
+  margin-top: 20%;
+  height: auto;
+  top: 50%;
+  text-align: center;
+}

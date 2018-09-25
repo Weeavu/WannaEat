@@ -1,4 +1,5 @@
 var options;
+var bussinessArray;
 
 var startAngle = 0;
 var arc;
@@ -12,11 +13,21 @@ var ctx;
 
 document.getElementById("spin").addEventListener("click", spin);
 
-function setOptions(array) {
-  console.log(array);
-  options = array;
+function setOptions(data) {
+  bussinessArray = data;
+  options = getBussinessNames(data);
   arc = Math.PI / (options.length / 2)
   drawRouletteWheel();
+}
+
+function getBussinessNames(businesses){
+  var results = [];
+
+  for(var i = 0; i < businesses.length; i++){
+    results.push(businesses[i].name);
+  }
+
+  return results;
 }
 
 function byte2Hex(n) {
@@ -124,7 +135,7 @@ function stopRotateWheel() {
   // ctx.font = 'bold 30px Helvetica, Arial';
   // var text = options[index]
   // ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 250 + 10);
-  document.getElementById("output").innerHTML = options[index];
+  setData(index)
   ctx.restore();
 }
 
@@ -132,6 +143,12 @@ function easeOut(t, b, c, d) {
   var ts = (t/=d)*t;
   var tc = ts*t;
   return b+c*(tc + -3*ts + 3*t);
+}
+
+function setData(index){
+  var choosen = document.getElementById("output");
+  choosen.innerHTML = options[index];
+  choosen.setAttribute("href", bussinessArray[index].url);
 }
 
 //drawRouletteWheel();

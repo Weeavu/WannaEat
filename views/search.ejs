@@ -2,25 +2,31 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>WannaEat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/search.css">
+    <title>WannaEat - <%= search %></title>
   </head>
   <body onload="setOptions(<%= JSON.stringify(data) %>)">
     <center>
       <h1>Whatchu Wanna Eat?</h1>
 
-      <form action="/search" method="get">
-        <input type="submit" value="Search">
-        <input type="text" name="search" value="<%= search %>" placeholder="Type Search"/>
-        <input type="text" name="location" value="<%= location %>">
-      </form>
+      <div class="formContainer">
+        <form action="/search" method="get" class="form-inline">
+          <input class="form-control mb-2 mr-sm-2 mb-sm-0" type="text" name="search" value="<%= search %>" placeholder="Enter Search..."/>
+          <input class="form-control mb-2 mr-sm-2 mb-sm-0" type="text" name="location" value="<%= location %>" placeholder="Enter Location...">
+          <input class="btn btn-primary" type="submit" value="Search">
+        </form>
+      </div>
 
-      <div id="output"></div>
 
-      <div>
+      Let's go to <a target="_blank" rel="noopener noreferrer" id="output" href="">Hi</a>
+
+      <div class="spinner">
         <canvas id="canvas" width="500" height="500"></canvas>
       </div>
 
-      <input type="button" value="spin" id='spin'/>
+      <input class="btn btn-primary btn-md" type="button" value="Spin" id='spin'/>
     </center>
     <script type="text/javascript" src="js/spin.js"></script>
   </body>

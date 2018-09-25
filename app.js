@@ -19,9 +19,8 @@ app.get("/search", function(req, res){
     term: req.query.search,
     location: req.query.location
   }).then(function(resp){
-    //console.log(res.jsonBody.businesses);
-    results = getSearchResults(resp.jsonBody.businesses);
-    data = {data:results, search:req.query.search, location:req.query.location};
+    console.log(resp.jsonBody.businesses);
+    data = {data:resp.jsonBody.businesses, search:req.query.search, location:req.query.location};
     console.log(results);
     res.render("search", data);
   }).catch(function(e){
@@ -38,13 +37,3 @@ app.listen(process.env.PORT || 3000, function(){
 const API_KEY = "S_pzptiC9c8YwwreBOmcVCFZcurqc9fX_k19gcYTHraxxeL97ZJY-WJjhoHIOWZvEAQAPS8KFW4mFC9NxcFh72CoABOSmH1Cb2LUHthZex4G3uZ5WusK1Yw_IvmBWnYx"
 
 const client = yelp.client(API_KEY);
-
-function getSearchResults(businesses){
-  var results = [];
-
-  for(var i = 0; i < businesses.length; i++){
-    results.push(businesses[i].name);
-  }
-
-  return results;
-}
