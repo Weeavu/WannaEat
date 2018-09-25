@@ -12,8 +12,9 @@ function setLocation(){
       Http.send();
       Http.onreadystatechange=(e)=>{
         var Location = JSON.parse(Http.responseText)
-
-        location.value = Location.results[0].address_components[2].long_name;
+        console.log(Location.results);
+        location.value = Location.results[0].address_components[2].long_name + ", "
+        + Location.results[0].address_components[4].short_name;
 
       }
     });
